@@ -1,0 +1,11 @@
+body{
+  background-color: blue;
+  background-image: url(https://bestanimations.com/media/discs/781973870cd-animated-gif-11.gif);
+  background-size: 200px 200px;
+  background-repeat: repeat;
+}
+.video{
+  padding: 70px;
+  display: flex;
+  justify-content: center;
+}
