@@ -1,4 +1,14 @@
-body {
-  background-color: pink;
-  
+*{
+  margin: 0;
+  padding: 0;
+}
+
+.header{
+  min-height: 100vh;
+  width: 100%;
+  background-image: linear-gradient(rgb(192, 110, 233),rgb(192, 110, 233)), url("C:\Users\mishs\OneDrive\Documents\Documents\jija.jpg");
+  background-position: center;
+  background-size: cover;
+  position: relative;
+
 }
