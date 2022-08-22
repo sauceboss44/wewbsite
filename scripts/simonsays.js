@@ -1,7 +1,9 @@
 
 // TODO: Add sounds, fix delays, red/green should blink twice
 
-
+let beep = new Audio("../media/beep.mp3")
+let wrong = new Audio("../media/wrong.wav")
+let correct = new Audio("../media/correct.wav")
 
 let sequence = []
 let clicks = []
@@ -48,6 +50,7 @@ function generateSequence(size){
 
 function changeTileColour(buttonNumber) {
   console.log(buttonNumber)
+  beep.play()
   document.getElementById("button".concat(buttonNumber)).src="https://re-mm-assets.s3.amazonaws.com/product_photo/46460/large_large_Poly_LightBlue_pms291up_1471509902.jpg"
   setTimeout(function (){
     document.getElementById("button".concat(buttonNumber)).src="https://media.tarkett-image.com/large/TH_24567080_24594080_24596080_24601080_24563080_24565080_24588080_001.jpg"
@@ -67,6 +70,7 @@ function playSequence(){
 }
 
 function fail(){
+  wrong.play()
   difficulty = 1
   clickNumber = -1
   sequence = []
@@ -85,6 +89,7 @@ function fail(){
 }
 
 function pass(){
+  correct.play()
   clickNumber = -1
   sequence = []
   clicks = []
