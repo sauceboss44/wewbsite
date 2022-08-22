@@ -5,8 +5,9 @@
   grid-gap: 20px;
   justify-content: center;
 }
-body{
-  background-image: url("https://cdn.akamai.steamstatic.com/steamcommunity/public/images/clans/36134145/3b403d5d8dec83085cc9578120b1e6a3154287df.gif");
-  background-repeat: no-repeat;
-  background-size: cover;
+
+#score {
+  font-family: sans-serif;
+  font-size: 20px;
+  color: black;
 }

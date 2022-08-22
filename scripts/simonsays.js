@@ -1,5 +1,5 @@
 
-// TODO: Add sounds, fix delays, red/green should blink twice
+// TODO: fix delays, red/green should blink twice, record high score
 
 let beep = new Audio("../media/beep.mp3")
 let wrong = new Audio("../media/wrong.wav")
@@ -93,6 +93,8 @@ function pass(){
   clickNumber = -1
   sequence = []
   clicks = []
+  console.log("SCORE:NUM".replace("NUM",(difficulty-1).toString()))
+  document.getElementById("score").textContent = "SCORE:NUM".replace("NUM",(difficulty-1).toString())
   async function load () {
     for (let i=1; i<5;i++){
       document.getElementById("button".concat(i.toString())).src="https://upload.wikimedia.org/wikipedia/commons/9/9b/Greensquare.png"
