@@ -7,7 +7,7 @@
 .header{
   min-height: 100vh;
   width: 100%;
-  background-image: linear-gradient(rgba(4, 9, 30,0.7),rgba(4, 9, 30,0.7)), url(https://img.freepik.com/premium-photo/2-sleepy-kittens-with-paws-sleep-comfortably-white-blanket-family-couple-cats-resting-together-two-gray-tabby-beautiful-domestic-kitten-love-hugging-long-web-banner-with-copy-space_221542-3047.jpg?w=1060);
+  background-image: linear-gradient(rgba(4, 9, 30,0.7),rgba(4, 9, 30,0.7)), url(https://www.rd.com/wp-content/uploads/2020/06/GettyImages-1010572700-scaled.jpg);
   background-position: center;
   background-size: cover;
   position: relative;
@@ -83,15 +83,4 @@ nav img{
   background: #E96EE7;
   transition: 1s;
 =======
-}
-
-.header{
-  min-height: 100vh;
-  width: 100%;
-  background-image: linear-gradient(rgb(192, 110, 233),rgb(192, 110, 233)), url("C:\Users\mishs\OneDrive\Documents\Documents\jija.jpg");
-  background-position: center;
-  background-size: cover;
-  position: relative;
-
->>>>>>> 444c93cf2430b00338200455133dd02ceaddd9b2
 }
