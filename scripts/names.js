@@ -1,13 +1,26 @@
-async function fetchText(path) {
-    let response = await fetch(path);
-    let data = await response.text();
-    let arr = data.split(/\r?\n/)
-    return await arr
+
+
+async function textToArray(path) {
+  let request = await fetch(path)
+  let data = await request.text()
+  return data.split(/\r?\n/)
 }
-let firstNames = []
-let lastNames = []
-fetchText("../etc/names1.txt")
-.then(data => console.log(data))
-// firstNames = fetchText("../etc/names1.txt")
-// lastNames = fetchText("../etc/names2.txt")
-console.log(firstNames)
+
+let names1 = await textToArray("../etc/names1.txt")
+let names2 = await textToArray("../etc/names2.txt")
+
+function capitalizeFirstLetter(string) {
+  return string.charAt(0).toUpperCase() + string.slice(1);
+}
+
+function generateName(){
+  let prefix = names1[Math.floor(Math.random()*10)]
+  prefix = prefix.concat(" ")
+  let suffix = names2[Math.floor(Math.random()*10)]
+  let name = capitalizeFirstLetter(prefix).concat(capitalizeFirstLetter(suffix))
+  document.getElementById("blank").textContent = name
+  console.log("ABCS")
+}
+
+generateName()
+document.getElementById("retry").addEventListener("click", generateName)

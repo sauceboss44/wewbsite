@@ -1,0 +1,34 @@
+.head{
+  padding-top: 30px;
+  text-align: center;
+  font-family: sans-serif;
+  /* text-shadow: gray 10px 20px; */
+  font-size: 25px;
+  line-height: 20px;
+  color: white;
+  height: 70px
+}
+body{
+  background-color: red;
+  /* border: 5px solid white */
+  margin: 0;
+  padding: 0;
+}
+
+.name{
+  background-color: white;
+  text-align: center;
+  font-family: handwriting;
+  /* text-shadow: gray 10px 20px; */
+  font-size: 70px;
+  line-height: 200px;
+  width: 100%;
+  line-height: 250px;
+  height: 250px;
+}
+
+
+@font-face {
+    font-family: 'handwriting'; /*a name to be used later*/
+    src: url("../etc/ShadowsIntoLight-Regular.ttf"); /*URL to font*/
+}
