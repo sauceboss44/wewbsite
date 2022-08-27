@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewpoint" content="with=device-width, initial-scale=1.0">
+    <title> Милые котики спят не будите!!! </title>
+    <link rel="stylesheet" href="../stylesheets/kotiki.css ">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,500;1,200;1,600;1,700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.css">
+
+<head>
+<body>
+  <section class="sub-header">
+    <nav>
+      <a href="../index.html"><img src="../media/flowcode.png"></a>
+      <div class="nav-links">
+        <ul>
+          <li><a href="cool_dino.html">HOME PAGE</a></li>
+          <li><a href="cool_dino_page1.html">COWBOY BEBOP</a></li>
+          <li><a href="">THREAD</a></li>
+          <li><a href="">ХУДШИЕ АНЕКДОТЫ РОССИИ</a></li>
+          <li><a href="">ЦИТАТЫ ВЕЛИКИХ КАРЛИКОВ</a></li>
+        </ul>
+      </div>
+    </nav>
+    <h1>Cowboy Bebop</h1>
+  </section>
+<!---about----->
+<section class="about">
+  <div class="row">
+    <div class="about-col">
+      <h1>The futuristic misadventures and tragedies of an easygoing bounty hunter and his partners.</h1>
+      <p>Mankind has colonised the stars, yet humanity remains the same desperate and power-hungry species in 2071. A ragtag duo of spacefaring bounty-hunters, Spike Spiegel and Jet Black, struggle to make ends meet living amongst the stars; and things are about to get a hell of a lot more complicated when they adopt the super-dog Ein, persuade the seductive femme-fatale known as Faye Valentine, and the teenage-hacker Edward. These five figures are about to come across things crazier than the crew of the Bebop itself.</p>
+        <a href="" class="hero-btn button">Watch Now</a>
+    </div>
+    <div class="about-col">
+      <img src="http://oyster.ignimgs.com/wordpress/stg.ign.com/2017/11/Spike.jpg" alt="">
+    </div>
+  </div>
+
+  <article class="comment-box">
+    <h2>Explain the main ideas behind Evangelion Neon Genesis, in 2-3 sentences</h2>
+    <input type="text" id="tbuser" placeholder="Enter Your Thoughts" maxlength="30">
+    <input type="button" class="hero-btn button" value="POST COMMENT" id="btn1">
+
+    <p class="output" id="output1">here must be your output</p>
+
+  </article>
+
+</section>
+
+
+
+<!--JAVA SCRIPT 4 OUTPUT--->
+<script>
+  const txt1 = document.getElementById('tbuser');
+  const btn1 = document.getElementById('btn1');
+  const out1 = document.getElementById('output1');
+
+  function fun1(){
+    out1.innerHTML = txt1.value;
+  }
+
+  btn1.addEventListener('click', fun1);
+</script>
+
+
+
+
+<!--FOOTER--->
+<section class="footer">
+  <h4>About us</h4>
+  <p>I am so tired man of just typing random text trying to be "funny". I give up
+  I have lost this war to the society. <br> It is not that long that you will find me dead
+  in my apartment, suffocated from my own personality.</p>
+  <div class="icons">
+    <i class="fa fa-envelope"></i>
+    <i class="fa fa-vk"></i>
+    <i class="fa fa-instagram"></i>
+    <i class="fa fa-linkedin"></i>
+  </div>
+  <p>Made with <i class="fa fa-heart"></i> by Cool_dino</p>
+</section>
