@@ -10,6 +10,7 @@ let clicks = []
 //number of tiles to remember
 let difficulty = 1
 let clickNumber = -1
+let delay = 250
 
 const timer = ms => new Promise(res => setTimeout(res, ms))
 
@@ -30,7 +31,18 @@ const timer = ms => new Promise(res => setTimeout(res, ms))
 //   }
 //   return true;
 // }
-
+function disableButtons(){
+  for (let i=1; i<5;i++){
+    document.getElementById("button".concat(i.toString())).onclick = function(){console.log('')}
+    console.log("buttons disabled")
+  }
+}
+function enableButtons(){
+  for (let i=1; i<5;i++){
+    document.getElementById("button".concat(i.toString())).onclick = function () {userInput(i.toString())}
+    console.log("buttons enabled")
+  }
+}
 
 function randomIntFromInterval(min, max) { // min and max included
   return Math.floor(Math.random() * (max - min + 1) + min)
@@ -51,35 +63,43 @@ function generateSequence(size){
 function changeTileColour(buttonNumber) {
   console.log(buttonNumber)
   beep.play()
+  beep.currentTime = 0
   document.getElementById("button".concat(buttonNumber)).src="https://re-mm-assets.s3.amazonaws.com/product_photo/46460/large_large_Poly_LightBlue_pms291up_1471509902.jpg"
   setTimeout(function (){
     document.getElementById("button".concat(buttonNumber)).src="https://media.tarkett-image.com/large/TH_24567080_24594080_24596080_24601080_24563080_24565080_24588080_001.jpg"
-  }, 400)
+  }, 225)
 }
 
 function playSequence(){
-  // too fucking fast
+  disableButtons()
   async function load () {
-    await timer(2000) // We need to wrap the loop into an async function for this to work
+    await timer(1000) // We need to wrap the loop into an async function for this to work
     for (let i=0; i<sequence.length;i++){
       changeTileColour(sequence[i])
-      await timer(1000)
+      await timer(delay)
     }
   }
+  setTimeout(function (){
+  enableButtons()
+},(delay*difficulty)-250)
   load()
 }
 
 function fail(){
-  wrong.play()
   difficulty = 1
   clickNumber = -1
   sequence = []
   clicks = []
+  disableButtons()
   async function load () {
+    await timer(150)
+    document.getElementById("score").textContent = "SCORE:NUM".replace("NUM","0")
+    wrong.play()
+    wrong.currentTime = 0
     for (let i=1; i<5;i++){
       document.getElementById("button".concat(i.toString())).src="https://upload.wikimedia.org/wikipedia/commons/e/e5/Redsquare.png"
     }
-    await timer(500)
+    await timer(250)
     for (let i=1; i<5;i++){
     document.getElementById("button".concat(i.toString())).src="https://media.tarkett-image.com/large/TH_24567080_24594080_24596080_24601080_24563080_24565080_24588080_001.jpg"
     }
@@ -89,17 +109,21 @@ function fail(){
 }
 
 function pass(){
-  correct.play()
+  delay = 1000 - difficulty * 40
   clickNumber = -1
   sequence = []
   clicks = []
+  disableButtons()
   console.log("SCORE:NUM".replace("NUM",(difficulty-1).toString()))
   document.getElementById("score").textContent = "SCORE:NUM".replace("NUM",(difficulty-1).toString())
   async function load () {
+    await timer(150)
+    correct.play()
+    correct.currentTime = 0
     for (let i=1; i<5;i++){
       document.getElementById("button".concat(i.toString())).src="https://upload.wikimedia.org/wikipedia/commons/9/9b/Greensquare.png"
     }
-    await timer(600)
+    await timer(250)
     for (let i=1; i<5;i++){
     document.getElementById("button".concat(i.toString())).src="https://media.tarkett-image.com/large/TH_24567080_24594080_24596080_24601080_24563080_24565080_24588080_001.jpg"
     }
@@ -126,7 +150,7 @@ function userInput(buttonNumber) {
   clicks.push(buttonNumber)
   setTimeout(function (){
   checkSequence()
-  },600)
+},350)
 }
 
 
