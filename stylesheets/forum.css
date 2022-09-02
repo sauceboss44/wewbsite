@@ -1,0 +1,121 @@
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/*--NAVIGATION BAR--*/
+nav{
+  display: flex;
+  padding: 2% 6%;
+  justify-content: space-between;
+  align-items: center;
+}
+nav img{
+  width: 150px;
+  width: 150px;
+}
+.nav-links{
+  flex: 1;
+  text-align: right;
+}
+.nav-links ul li{
+  list-style: none;
+  display: inline-block;
+  padding: 8px 12px;
+  position: relative;
+}
+.nav-links ul li a{
+  color: #fff;
+  text-decoration:none;
+  font-size: 13px;
+}
+.nav-links ul li::after{
+  content: '';
+  width: 0%;
+  height: 2px;
+  background: #C06EE9;
+  display: block;
+  margin: auto;
+  transition: 0.5s;
+}
+.nav-links ul li:hover::after{
+  width: 100%;
+}
+.sub-header{
+  height: 50vh;
+  width: 100%;
+  background-image: linear-gradient(rgba(4, 9, 30, 0.7), rgba(4, 9, 30, 0.7)), url(https://toppng.com/uploads/preview/code-text-programming-letters-symbols-11569818411fpnugmoo1n.jpg);
+  background-size: cover;
+  background-position: center;
+  text-align: center;
+  color: #fff;
+}
+.sub-header h1{
+  margin-top:30px;
+  font-size: 42px;
+}
+/*--END--*/
+
+html{
+  font-family: 'Poppins', sans-serif;
+  background-color: rgb(0, 0, 0);
+  color: #FEFEFE;
+}
+
+/*--FORUM--*/
+a{
+  color: #E7A6EF;
+  font-weight: bolder;
+  text-decoration: none;
+}
+.subforum-title{
+  font-size: 16px;
+  font-weight: bold;
+  background-color: #292B2E;
+  border-radius: 5px;
+  padding:5px;
+  margin: 4px;
+}
+.container{
+  margin: 20px;
+  padding: 20px;
+}
+.subforum{
+  margin-top: 20px;
+}
+.subforum-row{
+  display: grid;
+  grid-template-columns: 7% 60% 13% 20%;
+}
+.subforum-column{
+  padding: 10px;
+  margin: 4px;
+  border-radius: 5px;
+  background-color: #111314;
+}
+.center{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.subforum-icon i{
+  font-size: 45px;
+}
+/*--END--*/
+
+/*--FORUM BUT U GOT A SMALL SCREEN--*/
+@media screen and (max-width: 460px){
+  .container{
+    margin: 10px;
+    padding: 10px;
+  }
+  .subforum-row{
+    display: grid;
+    grid-template-columns: 25% 75%;
+    grid-template-rows: 65% 35%;
+  }
+
+}
+/*--END--*/
