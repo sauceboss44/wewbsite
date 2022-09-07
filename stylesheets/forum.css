@@ -210,7 +210,6 @@ a{
 .subforum-description *{
   margin-block: 0;
 }
-
 /*--END--*/
 
 /*--FORUM BUT U GOT A SMALL SCREEN--*/
@@ -247,3 +246,188 @@ footer{
   text-align: center;
 }
 /*--END--*/
+
+/*####################################################""""""""""""*/
+/* POSTS.HTML */
+
+.table-head{
+  display: flex;
+
+}
+.table-head div{
+  padding: 5px;
+  margin: 5px;
+  margin-top: 20px;
+  background-color: #2c2c2c;
+  font-weight: bold;
+}
+.table-head .status {
+  flex: 5%;
+}
+.table-head .subjects{
+  flex: 70%;
+}
+.table-head .replies{
+  flex: 10%;
+}
+.table-head .last-reply{
+  flex: 15%;
+}
+
+/*table body*/
+.table-row{
+  display: flex;
+}
+.table-row .status, .table-row .subjects, .table-row .replies,  .table-row .last-reply{
+  padding: 5px;
+  margin: 5px;
+  background-color: #131415;
+  border-radius: 5px;
+}
+.table-row .status{
+  flex:5%;
+  font-size: 30px;
+  text-align: center;
+}
+.table-row .subjects{
+  flex: 70%
+}
+.table-row .replies{
+  flex: 10%;
+}
+.table-row .last-reply{
+  flex: 15%;
+}
+
+/*PAGINATION*/
+.pagination{
+  padding:  20px;
+  font-size: 15px;
+}
+.pagination a{
+  color: #fff;
+  margin-inline:5px ;
+  padding: 5px 10px;
+  border: solid 0.5px #fefefe;
+}
+.pagination a:hover{
+  opacity: 0.5;
+}
+
+/*NAVIGATION*/
+.navigate{
+  margin: 20px;
+  font-weight: lighter;
+  font-size: 24px;
+}
+.navigate a{
+  color: #fff;
+}
+.navigate a:hover{
+  color:#E7A6EF;
+  font-weight: bolder;
+}
+
+/*Status Notes*/
+.note{
+  padding: 20px;
+  background-color: #111314;
+  display:block;
+}
+.note i{
+  font-size: 20px;
+  margin: 5px;
+}
+
+/*####################################################""""""""""""*/
+/* forum.detail.HTML */
+.head{
+  display: flex;
+  background-color: #2C2C2C;
+  padding: 5px;
+  font-weight: bold;
+  font-size: 15px;
+}
+.authors{
+  flex: 20%;
+}
+.content{
+  flex: 80%;
+}
+.body{
+  display: flex;
+  background-color: #131415;
+  padding: 10px;
+  margin-top: 5px;
+}
+.body .authors .username{
+  font-size: 20px;
+}
+.body .authors img{
+  max-width: 70px;
+  max-height: 100px;
+}
+.body .content .comment button{
+  border:none;
+  padding: 10px;
+  font-weight: bolder;
+  cursor: pointer;
+  float: right;
+  border-radius: 10px;
+}
+.body .content .comment button:hover{
+  background-color: #000000;
+  color: #fff;
+  transition: 0.3s;
+}
+/*comment box*/
+.comment-area{
+  margin-top:50px;
+  background-color: #131415;
+  padding: 10px
+}
+.comment-area textarea{
+  width: 90%;
+  min-height: 50px;
+  padding: 10px;
+  margin: 10px;
+}
+.comment-area input{
+  float: right;
+  padding: 10px;
+  margin: 20px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+.comment-area input:hover{
+  background-color: #000000;
+  color: #fff;
+  transition: 0.3s;
+}
+
+.comments-container{
+  margin-top: 50px;
+}
+.reply-area{
+  margin-top:50px;
+  background-color: #131415;
+  padding: 10px
+}
+.reply-area textarea{
+  width: 90%;
+  min-height: 50px;
+  padding: 10px;
+  margin: 10px;
+}
+.reply-area input{
+  float: right;
+  padding: 10px;
+  margin: 20px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+.reply-area input:hover{
+  background-color: #000000;
+  color: #fff;
+  transition: 0.3s;
+}

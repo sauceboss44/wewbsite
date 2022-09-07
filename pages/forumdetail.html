@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Forum</title>
+    <link rel="stylesheet" href="../stylesheets/forum.css ">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,500;1,200;1,600;1,700&family=Roboto:ital,wght@1,100&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.css">
+  </head>
+  <body>
+
+<!---FORUM----->
+<!--NAVBAR FORUM----->
+<header>
+  <div class="navbar">
+    <nav class="navigation hide" id="navigation">
+      <ul class="nav-list">
+        <span href="#" class="close-icon" onclick="showIconBar()"><i class="fa fa-close"></i></span>
+        <li class="nav-item">
+          <a href="forum.html">Home</a>
+        </li>
+        <li class="nav-item">
+          <a href="forumposts.html">Posts</a>
+        </li>
+        <li class="nav-item">
+          <a href="forumdetail.html">Detail</a>
+        </li>
+      </ul>
+    </nav>
+    <a href="#" class="bar-icon" id="iconBar" onclick="hideIconBar()"><i class="fa fa-bars"></i></a>
+    <div class="brand"> My Forum</div>
+  </div>
+  <!--END-->
+  <!--SEARCHBOX-->
+  <div class="search-box">
+    <div>
+      <select class="" name="" id="">
+        <option value="everything">Everything</option>
+        <option value="titles">Titles</option>
+        <option value="descriptions">Description</option>
+      </select>
+      <input type="text" name="q" value="" id="" placeholder="Search...">
+      <button> <i class="fa fa-search"></i></button>
+    </div>
+  </div>
+</header>
+<!--END-->
+
+<div class="container">
+  <!---NAVIGATION---->
+  <div class="navigate">
+    <span><a href="#">My Forum - Forums</a> >> <a href="#">Random Forum</a> >> <a href="#">Random Post</a></span>
+  </div>
+  <div class="topic-container">
+    <div class="head">
+      <div class="authors">Author</div>
+      <div class="content">Topic: post's title (Read 1258 Times)</div>
+    </div>
+    <div class="body">
+      <div class="authors">
+        <div class="username"><a href="#">UserName</a></div>
+        <div class="">Role</div>
+        <img src="https://cdn.pixabay.com/photo/2018/03/21/16/46/capybara-3247363_960_720.jpg" alt="">
+        <div class="">Posts: <u>45</u></div>
+        <div class="">Points: <u>1542</u></div>
+      </div>
+
+      <div class="content">
+        Just a random content of a random post,
+        <br> on a random forum posted by a rando Capybara.
+        <br><br>
+        Nothing else...
+        <br><br>
+        <hr>
+        Regards UserName
+        <div class="comment">
+          <button onclick="showComment()">Comment</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!--Comment input-->
+  <div class="comment-area hide" id="comment-area">
+    <textarea name="comment" rows="10" cols="80" placeholder="comment here..."></textarea>
+    <input type="submit" name="" value="submit">
+  </div>
+
+
+  <!--Show Comments-->
+  <div class="comments-container">
+    <div class="head">
+      <div class="authors">Author</div>
+      <div class="comments">Comments</div>
+    </div>
+    <div class="body">
+      <div class="authors">
+        <div class="AnotherUser"><a href="#">UserName</a></div>
+        <div class="">Role</div>
+        <img src="https://cdn.pixabay.com/photo/2018/03/21/16/46/capybara-3247363_960_720.jpg" alt="">
+        <div class="">Posts: <u>45</u></div>
+        <div class="">Points: <u>1542</u></div>
+      </div>
+
+      <div class="content">
+        Just a random content of a random post,
+        <br> on a random forum posted by a rando Capybara.
+        <br><br>
+        Nothing else...
+        <br>
+        <div class="comment">
+          <button onclick="showReply()">Reply</button>
+        </div>
+      </div>
+    </div>
+    <!--Reply input-->
+    <div class="reply-area hide" id="reply-area">
+      <textarea name="comment" rows="10" cols="80" placeholder="reply here..."></textarea>
+      <input type="submit" name="" value="submit">
+    </div>
+  </div>
+</div>
+
+
+  <footer>
+    <span>&copy; &nbsp; cool_dino| All rights resreved (jk, I cant reserve bullshit)</span>
+  </footer>
+    <script src="../scripts/forum.js"></script>
+  </body>
+</html>
