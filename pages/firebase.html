@@ -23,9 +23,9 @@
 
     <script type="module">
       // Import the functions you need from the SDKs you need
-      import { initializeApp } from "https://www.gstatic.com/firebasejs/9.9.4/firebase-app.js";
-      import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.9.4/firebase-analytics.js";
-      import { getFirestore, collection, addDoc, getDocs } from "https://www.gstatic.com/firebasejs/9.4.0/firebase-firestore.js";
+      import "https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js";
+      import "https://www.gstatic.com/firebasejs/8.10.1/firebase-analytics.js";
+      import "https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js";
 
       // TODO: Add SDKs for Firebase products that you want to use
       // https://firebase.google.com/docs/web/setup#available-libraries
@@ -45,35 +45,15 @@
       // ahuenno
 
       // Initialize Firebase
-      const app = initializeApp(firebaseConfig);
-      const analytics = getAnalytics(app);
-      const db = getFirestore(app);
+      firebase.initializeApp(firebaseConfig);
+      // const analytics = getAnalytics(app);
+      const db = firebase.firestore()
 
-
-      // function writeData() {
-      //   firebase.database().ref("User").set({
-      //     name: document.getElementById("namefield").value,
-      //     text: document.getElementById("tbuser").value
-      //   })
-      // }
-
-
-
-    // try {
-    //   const docRef = await addDoc(collection(db, "notes"), {
-    //     description: "ABC",
-    //     name: "me",
-    //     // timestamp:
-    //   });
-    //   console.log("Document written with ID: ", docRef.id);
-    // } catch (e) {
-    //   console.error("Error adding document: ", e);
-    // }
-    //
-    const querySnapshot = await getDocs(collection(db, "notes"));
-    querySnapshot.forEach((doc) => {
-      console.log(`${doc.id} => ${doc.data()}`);
-    });
+      db.collection("notes").get().then((querySnapshot) => {
+          querySnapshot.forEach((doc) => {
+              console.log(`${doc.id} => ${doc.data()}`);
+          });
+      });
 
 
     </script>
