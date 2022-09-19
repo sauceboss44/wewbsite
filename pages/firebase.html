@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta name="viewpoint" content="with=device-width, initial-scale=1.0">
+    <title> Милые котики спят не будите!!! </title>
+    <link rel="stylesheet" href="../stylesheets/kotiki.css ">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,500;1,200;1,600;1,700&family=Roboto:ital,wght@1,100&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.css">
+
+  </head>
+
+  <body>
+    <script type="module">
+      // Import the functions you need from the SDKs you need
+      import { initializeApp } from "https://www.gstatic.com/firebasejs/9.9.4/firebase-app.js";
+      import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.9.4/firebase-analytics.js";
+      // TODO: Add SDKs for Firebase products that you want to use
+      // https://firebase.google.com/docs/web/setup#available-libraries
+
+      // Your web app's Firebase configuration
+      // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+      const firebaseConfig = {
+        apiKey: "AIzaSyBIPgRkAMzshK3uIHMc-cH2diw6fXLaBWQ",
+        authDomain: "evangelion-886d9.firebaseapp.com",
+        projectId: "evangelion-886d9",
+        storageBucket: "evangelion-886d9.appspot.com",
+        messagingSenderId: "754955361656",
+        appId: "1:754955361656:web:d6619dc9f2e118c0d53c8d",
+        measurementId: "G-2ENRRKV1NL"
+      };
+
+      // Initialize Firebase
+      const app = initializeApp(firebaseConfig);
+      const analytics = getAnalytics(app);
+
+      function writeData() {
+        firebase.database().ref("User").set({
+          name: document.getElementById("namefield").value,
+          text: document.getElementById("tbuser").value
+        })
+      }
+
+    </script>
+    <section class="sub-header">
+      <nav>
+        <a href="../index.html"><img src="../media/flowcode.png"></a>
+        <div class="nav-links">
+          <ul>
+            <li><a href="cool_dino.html">HOME PAGE</a></li>
+            <li><a href="cool_dino_page1.html">COWBOY BEBOP</a></li>
+            <li><a href="forum.html">FORUM</a></li>
+            <li><a href="firebase.html">FIREBASE</a></li>
+          </ul>
+        </div>
+      </nav>
+      <h1>Firebase</h1>
+    </section>
+
+    <article class="comment-box">
+      <h2>Enter your name</h2>
+      <input type="text" id="namefield" placeholder="Enter Your Name" maxlength="30">
+
+
+      <h2>Explain the main ideas behind Evangelion Neon Genesis, in 2-3 sentences</h2>
+      <input type="text" id="tbuser" placeholder="Enter Your Thoughts" maxlength="60">
+
+      <button onclick="writeData">Submit</button>
+
+      <p class="output" id="output1">here must be your output</p>
+
+    </article>
+
+  </body>
+</html>
