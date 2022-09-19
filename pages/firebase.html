@@ -1,3 +1,11 @@
+<!-- https://firebase.google.com/docs/firestore/quickstart -->
+<!--provider.ts:130 Uncaught Error: Service firestore is not available
+    at Provider.getImmediate (provider.ts:130:15)
+    at gf (index.esm2017.js:17200:5)
+    at firebase.html:50:16
+    index.js:1 Uncaught (in promise) {message: 'The message port closed before a response was received.'}
+  (anonymous) @ index.js:1
+  firebase.html:1 Uncaught (in promise) {message: 'The message port closed before a response was received.'}-->
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
@@ -12,10 +20,13 @@
   </head>
 
   <body>
+
     <script type="module">
       // Import the functions you need from the SDKs you need
       import { initializeApp } from "https://www.gstatic.com/firebasejs/9.9.4/firebase-app.js";
       import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.9.4/firebase-analytics.js";
+      import { getFirestore, collection, addDoc, getDocs } from "https://www.gstatic.com/firebasejs/9.4.0/firebase-firestore.js";
+
       // TODO: Add SDKs for Firebase products that you want to use
       // https://firebase.google.com/docs/web/setup#available-libraries
 
@@ -24,23 +35,46 @@
       const firebaseConfig = {
         apiKey: "AIzaSyBIPgRkAMzshK3uIHMc-cH2diw6fXLaBWQ",
         authDomain: "evangelion-886d9.firebaseapp.com",
+        databaseURL: "https://evangelion-886d9-default-rtdb.europe-west1.firebasedatabase.app",
         projectId: "evangelion-886d9",
         storageBucket: "evangelion-886d9.appspot.com",
         messagingSenderId: "754955361656",
-        appId: "1:754955361656:web:d6619dc9f2e118c0d53c8d",
-        measurementId: "G-2ENRRKV1NL"
+        appId: "1:754955361656:web:5f6e58b1d0514713d53c8d",
+        measurementId: "G-GKL1EDVT1V"
       };
+      // ahuenno
 
       // Initialize Firebase
       const app = initializeApp(firebaseConfig);
       const analytics = getAnalytics(app);
+      const db = getFirestore(app);
 
-      function writeData() {
-        firebase.database().ref("User").set({
-          name: document.getElementById("namefield").value,
-          text: document.getElementById("tbuser").value
-        })
-      }
+
+      // function writeData() {
+      //   firebase.database().ref("User").set({
+      //     name: document.getElementById("namefield").value,
+      //     text: document.getElementById("tbuser").value
+      //   })
+      // }
+
+
+
+    // try {
+    //   const docRef = await addDoc(collection(db, "notes"), {
+    //     description: "ABC",
+    //     name: "me",
+    //     // timestamp:
+    //   });
+    //   console.log("Document written with ID: ", docRef.id);
+    // } catch (e) {
+    //   console.error("Error adding document: ", e);
+    // }
+    //
+    const querySnapshot = await getDocs(collection(db, "notes"));
+    querySnapshot.forEach((doc) => {
+      console.log(`${doc.id} => ${doc.data()}`);
+    });
+
 
     </script>
     <section class="sub-header">
